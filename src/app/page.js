@@ -46,7 +46,7 @@ export default function Home() {
           </nav>
           <div className="text-center p-10 py-10">
             <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
-              Dimitri Marco
+              Rachid Ouhammou
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
               Developer and designer.
@@ -61,7 +61,7 @@ export default function Home() {
               <AiFillYoutube />
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image src={deved} layout="fill" objectFit="cover" />
+              <Image src={deved}/>
             </div>
           </div>
         </section>
@@ -149,7 +149,6 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
-                layout="responsive"
                 src={web1}
               />
             </div>
@@ -158,7 +157,6 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
-                layout="responsive"
                 src={web2}
               />
             </div>
@@ -167,7 +165,6 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
-                layout="responsive"
                 src={web3}
               />
             </div>
@@ -176,7 +173,6 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
-                layout="responsive"
                 src={web4}
               />
             </div>
@@ -185,7 +181,6 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
-                layout="responsive"
                 src={web5}
               />
             </div>
@@ -194,7 +189,6 @@ export default function Home() {
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
-                layout="responsive"
                 src={web6}
               />
             </div>
