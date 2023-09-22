@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import {
-  AiFillTwitterCircle,
+  AiFillGithub,
   AiFillLinkedin,
   AiFillYoutube,
 } from "react-icons/ai";
@@ -17,6 +17,7 @@ import web3 from "/public/web3.png";
 import web4 from "/public/web4.png";
 import web5 from "/public/web5.png";
 import web6 from "/public/web6.png";
+import Link from 'next/link';
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -56,8 +57,8 @@ export default function Home() {
               needs. Join me down below and let's get cracking!
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <AiFillTwitterCircle />
-              <AiFillLinkedin />
+              <Link href="https://github.com/ouhammmourachid"><AiFillGithub/></Link>
+              <Link href="https://www.linkedin.com/in/rachid-ouhammou-383347202/"><AiFillLinkedin /></Link>
               <AiFillYoutube />
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
