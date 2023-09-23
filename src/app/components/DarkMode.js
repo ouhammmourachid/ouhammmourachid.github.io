@@ -22,4 +22,4 @@ const DarkModeButton = () => {
   )
 }
 
-export default DarkModeButton
+export default DarkModeButton;
