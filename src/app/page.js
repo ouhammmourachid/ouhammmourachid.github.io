@@ -5,9 +5,9 @@ import {
   AiFillLinkedin,
   AiFillYoutube,
 } from "react-icons/ai";
-import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
 import deved from "/public/dev-ed-wave.png";
+import DarkModeButton from './components/DarkMode';
 import code from "/public/code.png";
 import design from "/public/design.png";
 import consulting from "/public/consulting.png";
@@ -20,20 +20,15 @@ import web6 from "/public/web6.png";
 import Link from 'next/link';
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <div className={darkMode ? "dark" : ""}>
-      <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40">
+      <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40 w-fit">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">developedbyed</h1>
             <ul className="flex items-center">
               <li>
-                <BsFillMoonStarsFill
-                  onClick={() => setDarkMode(!darkMode)}
-                  className=" cursor-pointer text-2xl"
-                />
+                <DarkModeButton/>
               </li>
               <li>
                 <a
@@ -196,6 +191,5 @@ export default function Home() {
           </div>
         </section>
       </main>
-    </div>
   );
 }
