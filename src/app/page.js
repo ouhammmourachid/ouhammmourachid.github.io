@@ -22,7 +22,7 @@ import Link from 'next/link';
 export default function Home() {
 
   return (
-      <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 lg:px-40 w-fit">
+      <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 w-fit">
         <section className="min-h-screen">
           <nav className="py-10 mb-12 flex justify-between dark:text-white">
             <h1 className="font-burtons text-xl">developedbyed</h1>
