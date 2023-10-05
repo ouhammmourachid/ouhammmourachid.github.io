@@ -45,11 +45,12 @@ export default function Home() {
               Rachid Ouhammou
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Developer and designer.
+              Data Scientist and Machine Learning Enthusiast
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              Freelancer providing services for programming and design content
-              needs. Join me down below and let's get cracking!
+              Passionate about deep learning and machine learning, I specialize in NLP, 
+              GANs, and Computer Vision. My relentless pursuit of knowledge drives me to 
+              innovate and contribute to impactful industry projects.
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <Link href="https://github.com/ouhammmourachid"><AiFillGithub/></Link>
@@ -63,63 +64,70 @@ export default function Home() {
         </section>
         <section>
           <div>
-            <h3 className="text-3xl py-1 dark:text-white ">Services I offer</h3>
+            <h3 className="text-3xl py-1 dark:text-white ">My Journey in Data Science and Learning</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              Since the beginning of my journey as a freelance designer and
-              developer, I've done remote work for
-              <span className="text-teal-500"> agencies </span>
-              consulted for <span className="text-teal-500">startups </span>
-              and collaborated with talanted people to create digital products
-              for both business and consumer use.
+              I am on the exciting path of becoming a data scientist and machine 
+              learning enthusiast. My journey has been filled with exploration and 
+              learning in the fields of Natural Language Processing <span className="text-teal-500">(NLP)</span>, 
+              Generative Adversarial Networks <span className="text-teal-500">(GANs)</span>, 
+              and Computer Vision.
             </p>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
-              I offer from a wide range of services, including brand design,
-              programming and teaching.
+              Let's explore my experiences and projects below to see how I've 
+              been honing my skills and passion for data science.
             </p>
           </div>
           <div className="lg:flex gap-10">
             <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
               <Image src={design} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2  ">
-                Beautiful Designs
-              </h3>
-              <p className="py-2">
-                Creating elegant designs suited for your needs following core
-                design theory.
-              </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2 ">
+              <h3 className="text-lg font-medium pb-2 text-gray-700">
                 Code your dream project
               </h3>
-              <p className="py-2">
+              <p className="py-2 text-slate-500">
                 Do you have an idea for your next great website? Let's make it a
                 reality.
               </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
+              <h4 className="py-4 text-teal-600">FrameWork for web</h4>
+              <p className="text-gray-800 py-1">Django/Flask</p>
+              <p className="text-gray-800 py-1">Spring boot</p>
+              <p className="text-gray-800 py-1">React</p>
+              <p className="text-gray-800 py-1">Nextjs</p>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
+              <Image src={code} width={100} height={100} />
+              <h3 className="text-lg font-medium pb-2 text-gray-700">
+                Automate to Elevate
+              </h3>
+              <p className="py-2 text-slate-500">
+                Do you have a process that can be automated? 
+                Let's bring it to life.
+              </p>
+              <h4 className="py-4 text-teal-600">Programming language i use</h4>
+              <p className="text-gray-800 py-1">Python</p>
+              <p className="text-gray-800 py-1">Java</p>
+              <p className="text-gray-800 py-1">JavaScript</p>
+              <p className="text-gray-800 py-1">php</p>
+              <p className="text-gray-800 py-1">C++</p>
+              <p className="text-gray-800 py-1">C#</p>
+              <p className="text-gray-800 py-1">R</p>
             </div>
             <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
               <Image src={consulting} width={100} height={100} />
-              <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
-              <p className="py-2">
-                Are you interested in feedback for your current project? I can
-                give you tips and tricks to level it up.
+              <h3 className="text-lg font-medium pb-2 text-gray-700">
+                Transform Your Machine Learning 
+                Ideas into Code
+              </h3>
+              <p className="py-2 text-slate-500">
+                Are you interested in incorporating machine 
+                learning concepts into your business?
               </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Photoshop</p>
-              <p className="text-gray-800 py-1">Illustrator</p>
-              <p className="text-gray-800 py-1">Figma</p>
-              <p className="text-gray-800 py-1">Indesign</p>
+              <h4 className="py-4 text-teal-600">FrameWork i use</h4>
+              <p className="text-gray-800 py-1">Tensorflow</p>
+              <p className="text-gray-800 py-1">Pytorch</p>
+              <p className="text-gray-800 py-1">Scikit-learn</p>
+              <p className="text-gray-800 py-1">Nltk</p>
+              <p className="text-gray-800 py-1">Spacy</p>
+              <p className="text-gray-800 py-1">MediaPipe</p>
             </div>
           </div>
         </section>
