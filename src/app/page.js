@@ -33,7 +33,7 @@ export default function Home() {
               <li>
                 <Link
                   className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="https://www.canva.com/design/DAFignrZyK0/kjwNOKBpJuONzY8zf3Xarw/view?utm_content=DAFignrZyK0&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink"
+                  href="https://www.canva.com/design/DAFzgezZW-Y/utOC7KaynHn40EjqtvO9QA/view?utm_content=DAFzgezZW-Y&utm_campaign=designshare&utm_medium=link&utm_source=editor"
                 >
                   Resume
                 </Link>
