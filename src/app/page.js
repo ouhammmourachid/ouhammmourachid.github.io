@@ -1,66 +1,24 @@
 "use client"
 import Image from 'next/image'
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillYoutube,
-} from "react-icons/ai";
-import { useState } from "react";
-import deved from "/public/dev-ed-wave.png";
-import DarkModeButton from './components/DarkMode';
-import code from "/public/code.png";
-import design from "/public/design.png";
-import consulting from "/public/consulting.png";
 import web1 from "/public/web1.png";
 import web2 from "/public/web2.png";
 import web3 from "/public/web3.png";
 import web4 from "/public/web4.png";
 import web5 from "/public/web5.png";
 import web6 from "/public/web6.png";
-import Link from 'next/link';
+import Header from './components/Header';  
+import Info from './components/Info';
+import Skills from './components/Skills';
+import { ThemeProvider } from 'next-themes';
 
 export default function Home() {
 
   return (
+    <ThemeProvider attribute="class">
       <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 w-fit">
         <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between dark:text-white">
-            <h1 className="font-burtons text-xl">ouhammou</h1>
-            <ul className="flex items-center">
-              <li>
-                <DarkModeButton/>
-              </li>
-              <li>
-                <Link
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="https://www.canva.com/design/DAFzgezZW-Y/utOC7KaynHn40EjqtvO9QA/view?utm_content=DAFzgezZW-Y&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-                >
-                  Resume
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="text-center p-10 py-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
-              Rachid Ouhammou
-            </h2>
-            <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Data Scientist and Machine Learning Enthusiast
-            </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              Passionate about deep learning and machine learning, I specialize in NLP, 
-              GANs, and Computer Vision. My relentless pursuit of knowledge drives me to 
-              innovate and contribute to impactful industry projects.
-            </p>
-            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <Link href="https://github.com/ouhammmourachid"><AiFillGithub/></Link>
-              <Link href="https://www.linkedin.com/in/rachid-ouhammou-383347202/"><AiFillLinkedin /></Link>
-              <AiFillYoutube />
-            </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image src={deved}/>
-            </div>
-          </div>
+          <Header/>
+          <Info/>
         </section>
         <section>
           <div>
@@ -77,59 +35,7 @@ export default function Home() {
               been honing my skills and passion for data science.
             </p>
           </div>
-          <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} />
-              <h3 className="text-lg font-medium pb-2 text-gray-700">
-                Code your dream project
-              </h3>
-              <p className="py-2 text-slate-500">
-                Do you have an idea for your next great website? Let's make it a
-                reality.
-              </p>
-              <h4 className="py-4 text-teal-600">FrameWork for web</h4>
-              <p className="text-gray-800 py-1">Django/Flask</p>
-              <p className="text-gray-800 py-1">Spring boot</p>
-              <p className="text-gray-800 py-1">React</p>
-              <p className="text-gray-800 py-1">Nextjs</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} />
-              <h3 className="text-lg font-medium pb-2 text-gray-700">
-                Automate to Elevate
-              </h3>
-              <p className="py-2 text-slate-500">
-                Do you have a process that can be automated? 
-                Let's bring it to life.
-              </p>
-              <h4 className="py-4 text-teal-600">Programming language i use</h4>
-              <p className="text-gray-800 py-1">Python</p>
-              <p className="text-gray-800 py-1">Java</p>
-              <p className="text-gray-800 py-1">JavaScript</p>
-              <p className="text-gray-800 py-1">php</p>
-              <p className="text-gray-800 py-1">C++</p>
-              <p className="text-gray-800 py-1">C#</p>
-              <p className="text-gray-800 py-1">R</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={consulting} width={100} height={100} />
-              <h3 className="text-lg font-medium pb-2 text-gray-700">
-                Transform Your Machine Learning 
-                Ideas into Code
-              </h3>
-              <p className="py-2 text-slate-500">
-                Are you interested in incorporating machine 
-                learning concepts into your business?
-              </p>
-              <h4 className="py-4 text-teal-600">FrameWork i use</h4>
-              <p className="text-gray-800 py-1">Tensorflow</p>
-              <p className="text-gray-800 py-1">Pytorch</p>
-              <p className="text-gray-800 py-1">Scikit-learn</p>
-              <p className="text-gray-800 py-1">Nltk</p>
-              <p className="text-gray-800 py-1">Spacy</p>
-              <p className="text-gray-800 py-1">MediaPipe</p>
-            </div>
-          </div>
+          <Skills/>
         </section>
         <section className="py-10">
           <div>
@@ -199,5 +105,6 @@ export default function Home() {
           </div>
         </section>
       </main>
+    </ThemeProvider>
   );
 }
