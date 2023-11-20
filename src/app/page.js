@@ -1,13 +1,5 @@
 "use client"
 import Image from 'next/image'
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillYoutube,
-} from "react-icons/ai";
-import { useState } from "react";
-import deved from "/public/dev-ed-wave.png";
-import DarkModeButton from './components/DarkMode';
 import code from "/public/code.png";
 import design from "/public/design.png";
 import consulting from "/public/consulting.png";
@@ -17,50 +9,15 @@ import web3 from "/public/web3.png";
 import web4 from "/public/web4.png";
 import web5 from "/public/web5.png";
 import web6 from "/public/web6.png";
-import Link from 'next/link';
-
+import Header from './components/Header';  
+import Info from './components/Info';
 export default function Home() {
 
   return (
       <main className=" bg-white px-10 dark:bg-gray-900 md:px-20 w-fit">
         <section className="min-h-screen">
-          <nav className="py-10 mb-12 flex justify-between dark:text-white">
-            <h1 className="font-burtons text-xl">ouhammou</h1>
-            <ul className="flex items-center">
-              <li>
-                <DarkModeButton/>
-              </li>
-              <li>
-                <Link
-                  className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="https://www.canva.com/design/DAFzgezZW-Y/utOC7KaynHn40EjqtvO9QA/view?utm_content=DAFzgezZW-Y&utm_campaign=designshare&utm_medium=link&utm_source=editor"
-                >
-                  Resume
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          <div className="text-center p-10 py-10">
-            <h2 className="text-5xl py-2 text-teal-600 font-medium dark:text-teal-400 md:text-6xl">
-              Rachid Ouhammou
-            </h2>
-            <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Data Scientist and Machine Learning Enthusiast
-            </h3>
-            <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
-              Passionate about deep learning and machine learning, I specialize in NLP, 
-              GANs, and Computer Vision. My relentless pursuit of knowledge drives me to 
-              innovate and contribute to impactful industry projects.
-            </p>
-            <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <Link href="https://github.com/ouhammmourachid"><AiFillGithub/></Link>
-              <Link href="https://www.linkedin.com/in/rachid-ouhammou-383347202/"><AiFillLinkedin /></Link>
-              <AiFillYoutube />
-            </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-              <Image src={deved}/>
-            </div>
-          </div>
+          <Header/>
+          <Info/>
         </section>
         <section>
           <div>
