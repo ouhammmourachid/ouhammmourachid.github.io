@@ -23,7 +23,7 @@ const Info = () => (
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
               <Link href="https://github.com/ouhammmourachid"><AiFillGithub/></Link>
               <Link href="https://www.linkedin.com/in/rachid-ouhammou-383347202/"><AiFillLinkedin /></Link>
-              <AiFillYoutube />
+              <Link href="https://www.youtube.com/channel/UCosvmPdU1dVrR8bqYJ5kkdA"><AiFillYoutube /></Link>
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
             <Image src={rachid} className="-mt-5 ml-2 scale-125 transform transition-all duration-500 ease-in-out hover:scale-110" />
