@@ -60,7 +60,8 @@ a { color: inherit; }
 
 /* tabs above the viewport */
 .pl-bar { display: flex; gap: 2px; font-size: 13px; align-items: flex-end; }
-.pl-theme { flex: none; margin-left: auto; margin-bottom: 6px; display: inline-flex; align-items: center; gap: 8px; font: 500 13px var(--mono); color: var(--fg); background: transparent; border: 1px solid var(--line); padding: 6px 12px; cursor: pointer; }
+.pl-tools { flex: none; margin-left: auto; margin-bottom: 6px; display: flex; gap: 6px; align-items: center; }
+.pl-theme { flex: none; display: inline-flex; align-items: center; gap: 8px; font: 500 13px var(--mono); color: var(--fg); background: transparent; border: 1px solid var(--line); padding: 6px 12px; cursor: pointer; }
 .pl-theme:hover { border-color: var(--hl); color: var(--hl); }
 .pl-theme svg { width: 14px; height: 14px; }
 .pl-tabs { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
@@ -240,6 +241,20 @@ a { color: inherit; }
   .cs-sec { grid-template-columns: 1fr; gap: 16px; padding-top: 52px; }
   .cs-steps, .cs-feat { grid-template-columns: 1fr; }
 }
+
+/* returning visitors in the same session see the drawing finished (set by the script in layout.js) */
+html.plotted .pl-view *, html.plotted .pl-cmd div { animation-duration: 0s !important; animation-delay: 0s !important; }
+
+/* ───────── 404 ───────── */
+.nf-sheet { border: 1px solid var(--line); padding: clamp(24px, 5vw, 56px); position: relative; background: var(--bg); }
+.nf-sheet::before { content: ""; position: absolute; inset: 10px; border: 1.4px dashed var(--mark); pointer-events: none; }
+.nf-sheet .nf-code { margin: 18px 0 0; font: 800 clamp(96px, 20vw, 220px)/.85 var(--display); color: transparent; -webkit-text-stroke: 1.4px var(--fg); }
+.nf-sheet h1 { margin: 14px 0 0; font: 700 clamp(22px, 3vw, 32px) var(--display); }
+.nf-sheet p { margin: 10px 0 0; color: var(--mute); max-width: 52ch; }
+.nf-sheet .nf-err { color: var(--mark); }
+.nf-links { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.nf-links a { display: inline-block; border: 1px solid var(--line); padding: 8px 14px; text-decoration: none; color: var(--fg); }
+.nf-links a:hover { border-color: var(--hl); color: var(--hl); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0s !important; transition: none !important; }

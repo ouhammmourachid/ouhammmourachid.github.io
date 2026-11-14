@@ -3,25 +3,37 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import SheetBar from '../../components/SheetBar'
 import { getProduct, products } from '../products'
+import { copy, fill, LINKS, pathFor } from '../../../content/site'
 
-// Static export builds only these slugs; unknown ones hit notFound() below.
-// (No `dynamicParams = false`: in Next 13.5 dev it wrongly reports generateStaticParams as missing.)
+// Static export builds one page per product; unknown slugs hit notFound() below.
 export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }))
 }
 
-export function generateMetadata({ params }) {
-  const p = getProduct(params.slug)
+export async function generateMetadata({ params }) {
+  const { slug } = await params
+  const p = getProduct(slug)
   if (!p) return {}
+  const title = fill(copy.meta.caseTitle, { name: p.name })
+  const url = pathFor(`work/${slug}`)
   return {
-    title: `${p.name}, case study | Rachid Ouhammou`,
+    title,
     description: p.summary,
-    openGraph: { title: `${p.name}, case study`, description: p.summary, images: [p.image] },
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description: p.summary,
+      url,
+      type: 'article',
+      images: [{ url: `/og/${slug}.png`, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: 'summary_large_image', title, description: p.summary, images: [`/og/${slug}.png`] },
   }
 }
 
-export default function CaseStudy({ params }) {
-  const p = getProduct(params.slug)
+export default async function CaseStudy({ params }) {
+  const { slug } = await params
+  const p = getProduct(slug)
   if (!p) notFound()
   const next = products[(products.indexOf(p) + 1) % products.length]
 
@@ -31,14 +43,14 @@ export default function CaseStudy({ params }) {
 
       <article className="cs-sheet">
         <header className="cs-head">
-          <p className="cs-cmd"><b>Command:</b> OPEN {p.slug}.dwg</p>
-          <p className="cs-sheetno">Sheet {p.sheet} of {products.length + 1}</p>
+          <p className="cs-cmd"><b>{copy.plotter.command}</b> OPEN {p.slug}.dwg</p>
+          <p className="cs-sheetno">{fill(copy.cs.sheet, { n: p.sheet, total: products.length + 1 })}</p>
           <h1 className="cs-title" data-text={p.name}>{p.name}</h1>
           <p className="cs-tag">{p.tagline}</p>
           <dl className="cs-meta">
             <div><dt>Role</dt><dd>{p.role}</dd></div>
             <div><dt>Since</dt><dd>2025</dd></div>
-            <div><dt>Status</dt><dd><span className={`cs-status ${p.status === 'Live' ? 'live' : ''}`} aria-hidden="true" />{p.status}</dd></div>
+            <div><dt>Status</dt><dd><span className={`cs-status ${p.live ? 'live' : ''}`} aria-hidden="true" />{p.status}</dd></div>
             <div><dt>Live at</dt><dd><a href={p.url} target="_blank" rel="noopener noreferrer">{p.domain}</a></dd></div>
           </dl>
         </header>
@@ -49,7 +61,7 @@ export default function CaseStudy({ params }) {
             <Image src={p.image} alt={p.imageAlt} width={1440} height={900} unoptimized priority />
             <span className="cs-tint" aria-hidden="true" />
           </a>
-          <figcaption><b>Fig. 1</b> {p.domain}, home page, November 2026</figcaption>
+          <figcaption><b>Fig. 1</b> {fill(copy.cs.fig, { domain: p.domain })}</figcaption>
         </figure>
       </article>
 
@@ -87,7 +99,7 @@ export default function CaseStudy({ params }) {
               </tbody>
             </table>
           </div>
-          <p className="cs-note">{p.plans.note} As listed on {p.domain} in November 2026.</p>
+          <p className="cs-note">{p.plans.note} {fill(copy.cs.listed, { domain: p.domain })}</p>
         </div>
       </section>
 
@@ -99,12 +111,12 @@ export default function CaseStudy({ params }) {
       </section>
 
       <nav className="cs-next" aria-label="More sheets">
-        <Link href="/">Back to model</Link>
-        <Link href={`/work/${next.slug}`} className="go">Next sheet: <b>{next.name}</b></Link>
+        <Link href={pathFor()}>Back to model</Link>
+        <Link href={pathFor(`work/${next.slug}`)} className="go">Next sheet: <b>{next.name}</b></Link>
       </nav>
 
       <div className="pl-mail">
-        <b>Command:</b> MAIL <a href="mailto:contact.ouhammou@gmail.com">contact.ouhammou@gmail.com</a>{' '}
+        <b>{copy.plotter.command}</b> MAIL <a href={`mailto:${LINKS.email}`}>{LINKS.email}</a>{' '}
         <span className="pl-blink" aria-hidden="true" />
       </div>
     </main>

@@ -1,6 +1,7 @@
 import './globals.css'
 import localFont from 'next/font/local'
 import Providers from './components/Providers'
+import { SITE } from '../content/site'
 
 // Self-hosted (Latin subset from Google Fonts) so builds and dev never depend on a font download
 const display = localFont({
@@ -19,28 +20,30 @@ const mono = localFont({
   display: 'swap',
 })
 
+// Defaults; each page sets its own title, description, alternates and share image
 export const metadata = {
-  metadataBase: new URL('https://ouhammmourachid.github.io'),
-  title: 'Rachid Ouhammou, Software & AI Engineer',
-  description:
-    'Software and AI engineer in Casablanca. Founder of PocketsHub, Talla and WakilAds. I take products from idea to production.',
-  openGraph: {
-    title: 'Rachid Ouhammou, Software & AI Engineer',
-    description: 'Founder of PocketsHub, Talla and WakilAds. I take products from idea to production.',
-    url: '/',
-    images: ['/rachid-portrait.jpg'],
-    type: 'profile',
-  },
+  metadataBase: new URL(SITE),
+  title: 'Rachid Ouhammou',
+  authors: [{ name: 'Rachid Ouhammou', url: SITE }],
+}
+
+export const viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: dark)', color: '#1e252d' },
     { media: '(prefers-color-scheme: light)', color: '#f6f7f9' },
   ],
 }
 
+// Runs before paint: if this session already watched the drawing plot, show it finished.
+const PLOTTED = `try{if(sessionStorage.getItem('plotted'))document.documentElement.classList.add('plotted')}catch(e){}`
+
 export default function RootLayout({ children }) {
   return (
-    // next-themes writes data-theme on <html> before React hydrates
+    // next-themes writes data-theme (and the script above a class) on <html> before React hydrates
     <html lang="en" className={`${display.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: PLOTTED }} />
+      </head>
       <body>
         <Providers>{children}</Providers>
       </body>

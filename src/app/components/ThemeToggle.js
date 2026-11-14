@@ -3,17 +3,19 @@
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 
-export default function ThemeToggle() {
+const DEFAULT_LABELS = { light: 'Light', dark: 'Dark', toLight: 'Switch to light theme', toDark: 'Switch to dark theme' }
+
+export default function ThemeToggle({ labels = DEFAULT_LABELS }) {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
 
   // The saved theme is unknown during the static render, so hold the space until mounted
-  if (!mounted) return <span className="pl-theme" style={{ visibility: 'hidden' }} aria-hidden="true">Light</span>
+  if (!mounted) return <span className="pl-theme" style={{ visibility: 'hidden' }} aria-hidden="true">{labels.light}</span>
 
   const next = resolvedTheme === 'dark' ? 'light' : 'dark'
   return (
-    <button type="button" className="pl-theme" onClick={() => setTheme(next)} aria-label={`Switch to ${next} theme`}>
+    <button type="button" className="pl-theme" onClick={() => setTheme(next)} aria-label={next === 'light' ? labels.toLight : labels.toDark}>
       {next === 'light' ? (
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4" aria-hidden="true">
           <circle cx="8" cy="8" r="3" />
@@ -24,7 +26,7 @@ export default function ThemeToggle() {
           <path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7Z" />
         </svg>
       )}
-      <span className="pl-theme-label">{next === 'light' ? 'Light' : 'Dark'}</span>
+      <span className="pl-theme-label">{next === 'light' ? labels.light : labels.dark}</span>
     </button>
   )
 }
